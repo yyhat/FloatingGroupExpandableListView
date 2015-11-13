@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FloatingGroupExpandableListView.iml" filepath="$PROJECT_DIR$/FloatingGroupExpandableListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FloatingGroupExpandableListView/FloatingGroupExpandableListView-FloatingGroupExpandableListView.iml" filepath="$PROJECT_DIR$/FloatingGroupExpandableListView/FloatingGroupExpandableListView-FloatingGroupExpandableListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FloatingGroupExpandableListViewSample/FloatingGroupExpandableListViewSample.iml" filepath="$PROJECT_DIR$/FloatingGroupExpandableListViewSample/FloatingGroupExpandableListViewSample.iml" />
+    </modules>
+  </component>
+</project>
