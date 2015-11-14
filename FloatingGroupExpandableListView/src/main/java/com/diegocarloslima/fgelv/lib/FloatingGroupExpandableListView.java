@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -138,6 +139,7 @@ public class FloatingGroupExpandableListView extends ExpandableListView {
 			public void run() {
 				positionSelectorOnFloatingGroup();
 				setPressed(true);
+				Log.i("test", "Tap action");
 				if (mFloatingGroupView != null) {
 					mFloatingGroupView.setPressed(true);
 				}
@@ -336,26 +338,32 @@ public class FloatingGroupExpandableListView extends ExpandableListView {
 
 	@Override
 	public void setOnScrollListener(OnScrollListener listener) {
+		Log.i("test", "setOnScrollListener");
 		mOnScrollListener = listener;
 	}
 	
 	@Override
 	public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
 		super.setOnGroupClickListener(onGroupClickListener);
+		Log.i("test", "setOnGroupClickListener");
 		mOnGroupClickListener = onGroupClickListener;
 	}
 
 	public void setFloatingGroupEnabled(boolean floatingGroupEnabled) {
+		Log.i("test", "setFloatingGroupEnabled");
 		mFloatingGroupEnabled = floatingGroupEnabled;
 	}
 
 	public void setOnScrollFloatingGroupListener(OnScrollFloatingGroupListener listener) {
+		Log.i("test", "setOnScrollFloatingGroupListener");
 		mOnScrollFloatingGroupListener = listener;
 	}
 
 	private void createFloatingGroupView(int position) {
+		Log.i("test", "createFloatingGroupView position=" + position);
 		mFloatingGroupView = null;
 		mFloatingGroupPosition = getPackedPositionGroup(getExpandableListPosition(position));
+		Log.i("test", "getPackedPositionGroup mFloatingGroupPosition=" + mFloatingGroupPosition);
 
 		for(int i = 0; i < getChildCount(); i++) {
 			final View child = getChildAt(i);
@@ -375,6 +383,8 @@ public class FloatingGroupExpandableListView extends ExpandableListView {
 
 		final int floatingGroupFlatPosition = getFlatListPosition(getPackedPositionForGroup(mFloatingGroupPosition));
 		final int floatingGroupListPosition = floatingGroupFlatPosition - position;
+
+		Log.i("test", "getPackedPositionForGroup floatingGroupFlatPosition=" + floatingGroupFlatPosition);
 
 		if(floatingGroupListPosition >= 0 && floatingGroupListPosition < getChildCount()) {
 			final View currentGroupView = getChildAt(floatingGroupListPosition);

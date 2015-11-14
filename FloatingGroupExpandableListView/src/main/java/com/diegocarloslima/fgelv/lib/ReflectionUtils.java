@@ -9,6 +9,7 @@ public class ReflectionUtils {
 
 	private static final String TAG = ReflectionUtils.class.getName();
 
+	//反射
 	public static Object getFieldValue(Class<?> fieldClass, String fieldName, Object instance) {
 		try {
 			final Field field = fieldClass.getDeclaredField(fieldName);
